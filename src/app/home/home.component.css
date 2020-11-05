@@ -1,0 +1,33 @@
+/* Navigation bar */
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#nav-bar ul li a:hover {
+  color: #007bff !important;
+}
+
+.navbar-nav li {
+  padding: 0 10px;
+}
+
+.navbar-nav li a {
+  float: right;
+  text-align: left;
+}
+
+.navbar {
+  background: #fff;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+
+.nav-link {
+  color: #555 !important;
+  font-weight: 600;
+  font-size: 16px;
+}
