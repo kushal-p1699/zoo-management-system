@@ -22,8 +22,57 @@
   color: #1ebba3;
 }
 
-/***** slider  ******/
+/****** Image slider ******/
 
 .carousel-item {
   height: 100vh;
 }
+
+.carousel-caption {
+  position: absolute;
+  text-transform: uppercase;
+  top: 38%;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.carousel-caption h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  text-shadow: 0.1rem 0.1rem 0.8rem black;
+  padding-bottom: 1rem;
+}
+
+.carousel-caption h3 {
+  font-size: 2rem;
+  text-shadow: 0.1rem 0.1rem 0.5rem black;
+  padding-bottom: 1.6rem;
+}
+
+/****** Contact ******/
+
+.narrow {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.btn-md {
+  border-width: medium;
+  border-radius: 0;
+  padding: 0.6rem 1.1rem;
+  text-transform: uppercase;
+  margin: 1rem;
+}
+
+/****** Animals ******/
+
+.animals img {
+  max-width: 100%;
+}
+
+/* .row.no-padding [class*="col-"] {
+  padding: 0;
+} */
