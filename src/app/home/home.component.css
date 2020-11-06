@@ -1,33 +1,29 @@
-/* Navigation bar */
-#nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
+/****** Navigation Bar ******/
 
-#nav-bar ul li a:hover {
-  color: #007bff !important;
+.navbar {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  background: rgba(0, 0, 0, 0.6) !important;
 }
 
 .navbar-nav li {
-  padding: 0 10px;
+  padding-right: 0.7rem;
 }
 
-.navbar-nav li a {
-  float: right;
-  text-align: left;
+.navbar-dark .navbar-nav .navbar-link {
+  color: white;
+  padding-top: 0.8rem;
 }
 
-.navbar {
-  background: #fff;
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link :hover {
+  color: #1ebba3;
 }
 
-.navbar-toggler {
-  border: none !important;
-}
+/***** slider  ******/
 
-.nav-link {
-  color: #555 !important;
-  font-weight: 600;
-  font-size: 16px;
+.carousel-item {
+  height: 100vh;
 }
