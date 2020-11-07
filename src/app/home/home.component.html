@@ -12,7 +12,7 @@
           <a class="nav-link" href="#home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="#about">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#animals">Animals</a>
@@ -21,7 +21,8 @@
           <a class="nav-link" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#admin">Admin</a>
+          <!-- <a href="#adminLogin" class="trigger-btn" data-toggle="modal"> click here </a> -->
+          <a class="nav-link" href="#adminLogin" data-toggle="modal">Admin</a>
         </li>
       </ul>
     </div>
@@ -30,38 +31,56 @@
   <!-- Image slider -->
   <div id="carouselIndicators" class="carousel slide" data-ride="carousel" data-interval="7000">
     <ol class="carousel-indicators">
-      <li data-target="#carouselIndicators" data-slide="0" class="active"></li>
-      <li data-target="#carouselIndicators" data-slide="1" ></li>
-      <li data-target="#carouselIndicators" data-slide="2" ></li>
+      <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselIndicators" data-slide-to="1" ></li>
+      <li data-target="#carouselIndicators" data-slide-to="2" ></li>
     </ol>
     <div class="carousel-inner" role="listbox">
       <!-- slide 1 -->
-      <div class="carousel-item active " style="background-image: url(../../assets/images/wp3793385-zoo-animals-wallpapers.jpg);">
+      <div class="carousel-item active " style="background-image: url(../../assets/images/kid-deer-ps.jpg); background-size: cover;">
         <div class="carousel-caption text-center">
           <h1>Welcome to Zoo System</h1>
           <h3>Write something here</h3>
           <a class="btn btn-outline-light btn-lg" href="#animals">Click Here</a>
         </div>
       </div>
-
-      <!-- add slides here -->
+      <!-- slide 2 -->
+      <div class="carousel-item" style="background-image: url(../../assets/images/giraffe-ps.jpg); background-size: cover;">
+        <div class="carousel-caption text-center">
+          <h1>Welcome to Zoo System</h1>
+          <h3>Write something here</h3>
+          <a class="btn btn-outline-light btn-lg" href="#animals">Click Here</a>
+        </div>
+      </div>
+      <!-- slide 3 -->
+      <div class="carousel-item" style="background-image: url(../../assets/images/white-lion-ps.jpg);">
+        <div class="carousel-caption text-center">
+          <h1>Welcome to Zoo System</h1>
+          <h3>Write something here</h3>
+          <a class="btn btn-outline-light btn-lg" href="#animals">Click Here</a>
+        </div>
+      </div>
     </div>
     <!-- previous and next buttons for slider -->
-    <div class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </div>
-    <div class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </div>
+    </a>
   </div>
 </div>
 
-<!-- contact -->
+<!-- About -->
 <!-- this incomplete edit later -->
-<div id="contact" class="offset">
+<div id="about" class="offset">
   <div class="col-12 narrow text-center">
-    <h1>Hey This is Heading</h1>
-    <p class="lead">this area of text this is area of text, this is area of the text</p>
+    <h1>About</h1>
+    <p class="lead">
+      Zoological gardens provide an opportunity to open a whole new world of curiosity and interset, 
+      and sensitize visitors regarding the value and need for the conservation of wildlife. Zoos were initially started for the entertainment of people. 
+      Gradually over the years, they have come to play an importatnt role in conservation. The goal of zoos is the conservation of animals in the wild. 
+    </p>
     <a class="btn btn-secondary btn-md" href="#">click here</a>
   </div>
 </div>
@@ -95,4 +114,35 @@
       </div> 
     </div> <!-- end of column -->
   </div> <!-- end of row -->
+</div> <!-- end of Animal -->
+
+<!-- Admin Login dialog -->
+<div id="adminLogin" class="modal fade">
+  <div class="modal-dialog modal-login">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="avatar">
+          <img src="../../assets/images/avatar-png.png">
+        </div>
+        <h4 class="modal-title">Admin login</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" name="adminName" placeholder="Admin Name">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="adminPassowrd" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="forgot??">Forgot Passowrd?</a>
+      </div>
+    </div>
+  </div>
 </div>
