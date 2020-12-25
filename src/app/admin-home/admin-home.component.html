@@ -1,0 +1,41 @@
+<!-- <div class="col-md-6 user-container">
+    <form #f = 'ngForm'>
+        <label>Animal Name : </label>
+        <input type="text" name="animalName" [(ngModel)] = "addedAnimals.animalName" />
+        <br>
+        <label>Breed : </label>
+        <input type="text" name="breed" [(ngModel)] = "addedAnimals.breed" />
+        <br>
+        <label>Cage Number : </label>
+        <input type="text" name="cageNumber" [(ngModel)] = "addedAnimals.cageNumber" />
+        <br>
+        <input type="file" name="filename" (change) = "onFileSelect($event)"/>
+        <input type="button" (click)="onSubmit(f)" value="add to database">
+    </form>
+
+    <br>
+    <div>
+        <table border=8>
+            <tr>
+                <th>Animal Name</th>
+                <th>Animal breed</th>
+                <th>Animal Cage Number</th>
+                <th>Animal Image</th>
+            </tr>
+            <tr *ngFor="let animal of this.Animals; let i = index">
+                <td>
+                    {{animal.animal_name}}
+                </td>
+                <td>
+                    {{animal.breed}}
+                </td>
+                <td>
+                    {{animal.cage_number}}
+                </td>
+                <td>
+                    <img src={{animal.animal_image_name}} width=100 >
+                </td>
+            </tr>
+        </table>
+    </div>
+</div> -->
