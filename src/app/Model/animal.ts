@@ -1,8 +1,8 @@
 export class Animal {
     id: number;
     animalName: string;
-    breed: string;
+    age: number;
     cageNumber: number;
-    imageFile: any;
     animalImageName: any;
+    description: any;
 }

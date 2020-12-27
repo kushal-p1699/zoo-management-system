@@ -18,7 +18,7 @@
           <a class="nav-link" href="#animals">Animals</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#events">About</a>
         </li>
         <li class="nav-item">
           <!-- <a href="#adminLogin" class="trigger-btn" data-toggle="modal"> click here </a> -->
@@ -39,24 +39,24 @@
       <!-- slide 1 -->
       <div class="carousel-item active " style="background-image: url(../../assets/images/kid-deer-ps.jpg); background-size: cover;">
         <div class="carousel-caption text-center">
-          <h1>Welcome to Zoo System</h1>
-          <h3>Write something here</h3>
+          <h1>Welcome to The Zoo</h1>
+          <h3>Click below to visit animals</h3>
           <a class="btn btn-outline-light btn-lg" href="#animals">Click Here</a>
         </div>
       </div>
       <!-- slide 2 -->
       <div class="carousel-item" style="background-image: url(../../assets/images/giraffe-ps.jpg); background-size: cover;">
         <div class="carousel-caption text-center">
-          <h1>Welcome to Zoo System</h1>
-          <h3>Write something here</h3>
+          <h1>Welcome to Zoo</h1>
+          <h3>Click below to visit animals</h3>
           <a class="btn btn-outline-light btn-lg" href="#animals">Click Here</a>
         </div>
       </div>
       <!-- slide 3 -->
       <div class="carousel-item" style="background-image: url(../../assets/images/white-lion-ps.jpg);">
         <div class="carousel-caption text-center">
-          <h1>Welcome to Zoo System</h1>
-          <h3>Write something here</h3>
+          <h1>Welcome to Zoo</h1>
+          <h3>Click below to visit animals</h3>
           <a class="btn btn-outline-light btn-lg" href="#animals">Click Here</a>
         </div>
       </div>
@@ -75,46 +75,135 @@
 <!-- this incomplete edit later -->
 <div id="about" class="offset">
   <div class="col-12 narrow text-center">
-    <h1>About</h1>
-    <p class="lead">
+    <h4>ABOUT</h4>
+    <p class="blockquote text-center">
       Zoological gardens provide an opportunity to open a whole new world of curiosity and interset, 
       and sensitize visitors regarding the value and need for the conservation of wildlife. Zoos were initially started for the entertainment of people. 
       Gradually over the years, they have come to play an importatnt role in conservation. The goal of zoos is the conservation of animals in the wild. 
     </p>
-    <a class="btn btn-secondary btn-md" href="#">click here</a>
+    <!-- <a class="btn btn-secondary btn-md" href="#">click here</a> -->
   </div>
 </div>
 
 <!-- Animal Section -->
-<div id="animal">
-  <div class="jumbotron container-fluid text-center">
-    <h3 class="heading">Animals</h3>
+<div id="animals">
+  <div class="jumbotron text-center">
+    <h3>Animals Gallery</h3>
     <div class="heading-underline"></div>
   </div> <!-- end of jumbotron-->
 
-  <div class="row no-padding">
-    <div class="col-sm-4">
-      <div class="animals">
-        <!-- <a><img></a> Add image of animals here (from database) -->
-        <a><img src="../../assets/images/animals-background-preview-23.jpg"></a> 
-      </div> 
-    </div> <!-- end of column -->
+  <!-- gird -->
+  <div class="row">
+    <div class="col-6 col-md-4" *ngFor="let animal of this.Animals; let i = index">
+      <!-- <div class="animals"> 
+        <a><img src={{animal.animal_image_name}}></a> 
+      </div> -->
 
-    <div class="col-sm-4">
-      <div class="animals">
-        <!-- <a><img></a> Add image of animals here (from database) -->
-        <a><img src="../../assets/images/wp3793316-zoo-animals-wallpapers.jpg"></a> 
-      </div> 
+      <div class="card" >
+        <img class="card-img-top img-thumbnail" src="{{animal.animal_image_name}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{animal.animal_name}}</h5>
+          <p class="card-text">{{animal.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Age : {{animal.age}}</li>
+          <li class="list-group-item">Cage Number: {{animal.cage_number}}</li>
+        </ul>
+        <!-- <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div> -->
+      </div> <!-- end card -->
     </div> <!-- end of column -->
-
-    <div class="col-sm-4">
-      <div class="animals">
-        <!-- <a><img></a> Add image of animals here (from database) -->
-        <a><img src="../../assets/images/wp3793385-zoo-animals-wallpapers.jpg"></a> 
-      </div> 
-    </div> <!-- end of column -->
-  </div> <!-- end of row -->
+  </div> <!--  end of row -->
 </div> <!-- end of Animal -->
+
+<div id="events">
+  <div class="jumbotron">
+    <h2>contact</h2>
+  </div>
+  <!-- <div class="row">
+    <div class="col-6 col-md-4">
+      <div class="card rounded-circle"  style="width: 18rem;">
+        <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+
+<!-- footer -->
+<footer class="mainfooter" role="contentinfo">
+  <div class="footer-middle">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>Details</h4>
+          <ul class="list-unstyled">
+            <li><a href="#"></a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">animals</a></li>
+            <li><a href="#">contact</a></li>
+            <li><a href="#">admin</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- <div class="col-md-3 col-sm-6">
+        <div class="footer-pad">
+          <h4>Heading 2</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">Website Tutorial</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Webmaster</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-pad">
+          <h4>Heading 3</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">Parks and Recreation</a></li>
+            <li><a href="#">Public Works</a></li>
+            <li><a href="#">Police Department</a></li>
+            <li><a href="#">Fire</a></li>
+            <li><a href="#">Mayor and City Council</a></li>
+            <li>
+              <a href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+    	<div class="col-md-3">
+    		<h4>Follow Us</h4>
+            <ul class="social-network social-circle">
+             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+             <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+             <li><a href="#" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+            </ul>				
+		</div>
+    </div>
+	<div class="row">
+		<div class="col-md-12 copy">
+			<h6 class="text-center">&copy; Copyright {{this.currentYear}} - Zoo Management System.  All rights reserved.</h6>
+		</div>
+	</div>
+
+
+  </div>
+  </div>
+</footer>
+
 
 <!-- Admin Login dialog -->
 <div id="adminLogin" class="modal fade">
@@ -128,7 +217,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
       <div class="modal-body">
-        <form (ngSubmit)="onLogin()">
+        <form>
           <div class="form-group">
             <input type="text" class="form-control" name="adminName" placeholder="Admin Name">
           </div>
@@ -136,7 +225,7 @@
             <input type="password" class="form-control" name="adminPassowrd" placeholder="Password">
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+            <button type="submit" id="login_btn" class="btn btn-primary btn-lg btn-block login-btn" data-dismiss="modal" (click)="onLogin()">Login</button>
           </div>
         </form>
       </div>

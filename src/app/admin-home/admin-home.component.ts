@@ -20,50 +20,50 @@ export class AdminHomeComponent implements OnInit {
     private _service : ZmsServiceService,
   ) { }
 
-  imagesForm: FormGroup;
-  Animals: Animal[];
-  fileName: any;
+  // imagesForm: FormGroup;
+  // Animals: Animal[];
+  // fileName: any;
 
-  addedAnimals: Animal = {
-    id: null,
-    animalName: null, 
-    breed: null,
-    cageNumber: null,
-    imageFile: null,
-    animalImageName : null
-  }
+  // addedAnimals: Animal = {
+  //   id: null,
+  //   animalName: null, 
+  //   breed: null,
+  //   cageNumber: null,
+  //   imageFile: null,
+  //   animalImageName : null
+  // }
 
   ngOnInit() {
     /* fetching aminal data */
-    this._service.readAnimalData()
-      .subscribe((animals: Animal[]) => {
-        this.Animals = animals;
-        console.log("fetched data : ", this.Animals);
-      })
+    // this._service.readAnimalData()
+    //   .subscribe((animals: Animal[]) => {
+    //     this.Animals = animals;
+    //     console.log("fetched data : ", this.Animals);
+    //   })
     
   }
 
 
-  onFileSelect(event) {
-    const file = event.target.files[0];
-    this.fileName = file.name;
-    console.log("selected file name :", this.fileName)
-  }
+  // onFileSelect(event) {
+  //   const file = event.target.files[0];
+  //   this.fileName = file.name;
+  //   console.log("selected file name :", this.fileName)
+  // }
 
-  onSubmit(form) {
+  // onSubmit(form) {
 
-    var enteredData = {
-      "animalName": form.value.animalName,
-      "breed": form.value.breed,
-      "cageNumber": form.value.cageNumber,
-      "animalImageName" : "../../assets/images/"+this.fileName
-    }
-    console.log("entered data : ", enteredData);
+  //   var enteredData = {
+  //     "animalName": form.value.animalName,
+  //     "breed": form.value.breed,
+  //     "cageNumber": form.value.cageNumber,
+  //     "animalImageName" : "../../assets/images/"+this.fileName
+  //   }
+  //   console.log("entered data : ", enteredData);
 
-    this._service.addAnimals(enteredData)
-      .subscribe((animal: Animal[]) => {
-        console.log("animal added : ", animal);
-      })
-  }
+  //   this._service.addAnimals(enteredData)
+  //     .subscribe((animal: Animal[]) => {
+  //       console.log("animal added : ", animal);
+  //     })
+  // }
 
 }

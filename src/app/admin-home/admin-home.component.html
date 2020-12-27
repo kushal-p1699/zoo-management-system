@@ -39,3 +39,35 @@
         </table>
     </div>
 </div> -->
+<!-- <nav class="navbar">
+    <div class="navbar-nav ml-auto">
+        <a class="navbar-brand" href="#">admin</a>
+    </div>
+</nav> -->
+<div class="page-container">
+    <div class="sidebar">
+        <div class="list-items">
+            <a routerLink="/admin/add-animals" routerLinkActive="selected" class="list-item">
+                <i class="material-icons">bookmark_border</i>
+                Add Animal Details
+            </a>
+            <a routerLink="/admin/view-animals" routerLinkActive="selected" class="list-item">
+                <i class="material-icons">bookmark_border</i>
+                View Animal Details
+            </a>
+            <a class="list-item" routerLinkActive="selected">
+                <i class="material-icons">bookmark_border</i>
+                item1
+            </a>
+            <a class="list-item" routerLinkActive="selected">
+                <i class="material-icons">bookmark_border</i>
+                item1
+            </a>
+        </div>
+    </div>
+
+    <div class="page-content-container">
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>

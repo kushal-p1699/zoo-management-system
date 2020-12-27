@@ -19,4 +19,12 @@ export class ZmsServiceService {
   readAnimalData(): Observable<Animal[]> {
     return this.http.get<Animal[]>(`${this.baseUrl}/fetchAnimalData.php`);
   }
+
+  updateAnimalData(animals: Animal) {
+    return this.http.put(`${this.baseUrl}/updateAnimals.php`, animals);
+  }
+
+  deleteAnimalData(id: number) {
+    return this.http.delete<Animal>(`${this.baseUrl}/deleteAnimals.php/?id=${id}`);
+  }
 }

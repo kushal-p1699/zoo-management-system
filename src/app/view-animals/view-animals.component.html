@@ -1,0 +1,76 @@
+<div class="container">
+    <table class="table" border=2>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Animal Name</th>
+            <th scope="col">Animal Age</th>
+            <th scope="col">Animal Cage Number</th>
+            <!-- <th scope="col">Animal Description</th> -->
+            <th scope="col">Animal Image</th>
+        </tr>
+        <tr *ngFor="let animal of this.Animals; let i = index">
+            
+            <th scope="row">{{i+1}}</th>
+            <td>
+                {{animal.animal_name}}
+            </td>
+            <td>
+                {{animal.age}}
+            </td>
+            <td>
+                {{animal.cage_number}}
+            </td>
+            <!-- <td>
+                {{animal.description}}
+            </td> -->
+            <td>
+                <img src={{animal.animal_image_name}} width=100 >
+            </td>
+            <!-- update and delete buttons -->
+            <td>
+                <input type="button" class="btn btn-danger btn-lg" (click)="onDelete(animal.id)" value="Delete"/>
+            </td>
+            <td>
+                <input type="button" class="btn btn-success btn-lg" (click)="openDialogForUpdate(animal)" value="Update" data-toggle="modal" data-target="#exampleModalCenter"/>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #f1 = 'ngForm'>
+                    <label>Animal Name : </label>
+                    <input type="text" class="form-control" name="animalName" value={{this.animal_name}} [(ngModel)] = "updatedAnimals.animalName" />
+                    <br>
+                    <label>Age : </label>
+                    <input type="text" class="form-control" name="age" value="{{this.age}}" [(ngModel)] = "updatedAnimals.age"/>
+                    <br>
+                    <label>Cage Number : </label>
+                    <input type="text" class="form-control" name="cageNumber" value="{{this.cage_number}}" [(ngModel)] = "updatedAnimals.cageNumber"/>
+                    <br>
+                    <label>Aniaml Image : </label>
+                    <input type="file" class="form-control-file" name="filename" (change) = "onFileSelect($event)"/>
+                    <br>
+                    <label for="description">Add Description : </label>
+                    <textarea class="form-control" id="description" name="description" rows="3" value="{{this.description}}" [(ngModel)] = "updatedAnimals.description"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="onSubmit(f1)" data-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>

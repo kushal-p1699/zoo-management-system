@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
+html,
 body {
   /* overflow-y: hidden; */
   font-family: "Lato", sans-serif;
   color: #505962;
+  height: 100%;
 }

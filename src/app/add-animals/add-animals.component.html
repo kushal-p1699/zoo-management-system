@@ -1,0 +1,20 @@
+<div class="page-container">
+    <form #f = 'ngForm'>
+        <label>Animal Name : </label>
+        <input type="text" class="form-control" name="animalName" [(ngModel)] = "addedAnimals.animalName" />
+        <br>
+        <label>Age : </label>
+        <input type="text" class="form-control" name="age" [(ngModel)] = "addedAnimals.age" />
+        <br>
+        <label>Cage Number : </label>
+        <input type="text" class="form-control" name="cageNumber" [(ngModel)] = "addedAnimals.cageNumber" />
+        <br>
+        <label>Aniaml Image : </label>
+        <input type="file" class="form-control-file" name="filename" (change) = "onFileSelect($event)"/>
+        <br>
+        <label for="description">Add Description : </label>
+    <textarea class="form-control" id="description" name="description" rows="3" [(ngModel)]="addedAnimals.description" ></textarea>
+        <br>
+        <input type="button" class="btn btn-dark" (click)="onSubmit(f)" value="add to database">
+    </form>
+</div>
