@@ -1,0 +1,26 @@
+<div class="page-container">
+
+    <h3>Edit Your Profile</h3>
+    <br>
+    <form [formGroup]="profileForm" (ngSubmit)="onUpdateProfile()">
+        <label>Name: </label>
+        <input type="text" class="form-control" name="name" formControlName="name" value="{{adminData.name}}"/>
+        <br>
+        <label>Email: </label>
+        <input type="email" class="form-control" name="email" formControlName="email" value="{{adminData.email}}"/>
+        <br>
+        <label>Phone Number: </label>
+        <input type="text" class="form-control" name="phoneNumber" formControlName="phoneNumber" value="{{adminData.phone_number}}" />
+        <br>
+        <label>Password: (change password if required) </label>
+        <input type="password" class="form-control" name="password" formControlName="password"  value="{{adminData.password}}"/>
+
+        <br>
+        <div class="form-button">
+            <input type="submit" class="btn btn-dark" value="update">
+            <input type="reset" class="btn btn-dark" value="clear">
+        </div>
+        
+    </form>
+</div>
+

@@ -18,7 +18,10 @@
           <a class="nav-link" href="#animals">Animals</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#events">About</a>
+          <a class="nav-link" href="#events">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
         <li class="nav-item">
           <!-- <a href="#adminLogin" class="trigger-btn" data-toggle="modal"> click here </a> -->
@@ -29,11 +32,11 @@
   </nav>
 
   <!-- Image slider -->
-  <div id="carouselIndicators" class="carousel slide" data-ride="carousel" data-interval="7000">
+  <div id="carouseButtons" class="carousel slide" data-ride="carousel" data-interval="7000">
     <ol class="carousel-indicators">
-      <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselIndicators" data-slide-to="1" ></li>
-      <li data-target="#carouselIndicators" data-slide-to="2" ></li>
+      <li data-target="#carouseButtons" data-slide-to="0" class="active"></li>
+      <li data-target="#carouseButtons" data-slide-to="1" ></li>
+      <li data-target="#carouseButtons" data-slide-to="2" ></li>
     </ol>
     <div class="carousel-inner" role="listbox">
       <!-- slide 1 -->
@@ -62,11 +65,11 @@
       </div>
     </div>
     <!-- previous and next buttons for slider -->
-    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <a href="#carouseButtons" class="carousel-control-prev" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
     </a>
-    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <a href="#carouseButtons" class="carousel-control-next" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
     </a>
   </div>
 </div>
@@ -92,47 +95,226 @@
     <div class="heading-underline"></div>
   </div> <!-- end of jumbotron-->
 
-  <!-- gird -->
-  <div class="row">
-    <div class="col-6 col-md-4" *ngFor="let animal of this.Animals; let i = index">
-      <!-- <div class="animals"> 
-        <a><img src={{animal.animal_image_name}}></a> 
-      </div> -->
 
-      <div class="card" >
-        <img class="card-img-top img-thumbnail" src="{{animal.animal_image_name}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{animal.animal_name}}</h5>
-          <p class="card-text">{{animal.description}}</p>
+  <!-- card carousel -->
+  <div class="card-carousel-container ">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <!-- cards container -->
+              <div class="container">
+                <div class="row">
+                  <!-- <div *ngIf="i < 3"> -->
+                    <div class="col-6 col-md-4">
+                      <!-- cards -->
+                      <div class="card" >
+                        <img class="card-img-top img-thumbnail" src="{{this.Animals[0].animal_image_name}}" alt="Card image cap"/>
+                        <div class="card-body">
+                          <h5 class="card-title">{{this.Animals[0].animal_name}}</h5>
+                          <p class="card-text">{{this.Animals[0].description}}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Age : {{this.Animals[0].age}}</li>
+                          <li class="list-group-item">Cage Number: {{this.Animals[0].cage_number}}</li>
+                        </ul>
+                      </div> <!-- end card -->
+                    </div> <!-- end of column -->
+  
+                    <div class="col-6 col-md-4">
+                      <!-- cards -->
+                      <div class="card" >
+                        <img class="card-img-top img-thumbnail" src="{{this.Animals[1].animal_image_name}}" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">{{this.Animals[1].animal_name}}</h5>
+                          <p class="card-text">{{this.Animals[1].description}}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Age : {{this.Animals[1].age}}</li>
+                          <li class="list-group-item">Cage Number: {{this.Animals[1].cage_number}}</li>
+                        </ul>
+                      </div> <!-- end card -->
+                    </div> <!-- end of column -->
+  
+                    <div class="col-6 col-md-4">
+                      <!-- cards -->
+                      <div class="card" >
+                        <img class="card-img-top img-thumbnail" src="{{this.Animals[2].animal_image_name}}" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">{{this.Animals[2].animal_name}}</h5>
+                          <p class="card-text">{{this.Animals[2].description}}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Age : {{this.Animals[2].age}}</li>
+                          <li class="list-group-item">Cage Number: {{this.Animals[2].cage_number}}</li>
+                        </ul>
+                      </div> <!-- end card -->
+                    </div> <!-- end of column -->
+                  <!-- </div> -->
+                  
+                </div> <!--  end of row -->
+              </div> <!-- end of container-->
+            </div>
+
+            <div class="carousel-item">
+              <!-- cards container -->
+              <div class="container">
+                <div class="row">
+                  <div class="col-6 col-md-4" *ngFor="let animal of this.Animals; let i = index">
+                    <!-- cards -->
+                    <div *ngIf =  "i > 2">
+                      <div class="card" >
+                        <img class="card-img-top img-thumbnail" src="{{this.Animals[i].animal_image_name}}" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">{{this.Animals[i].animal_name}}</h5>
+                          <p class="card-text">{{this.Animals[i].description}}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Age : {{this.Animals[i].age}}</li>
+                          <li class="list-group-item">Cage Number: {{this.Animals[i].cage_number}}</li>
+                        </ul>
+                      </div> <!-- end card -->
+                    </div> <!--end of if-->
+                    
+                  </div> <!-- end of column -->
+                </div> <!--  end of row -->
+              </div> <!-- end of container-->
+            </div>
+
+
+
+          </div>
+          <!-- carousel buttons -->
+          <a href="#myCarousel" class="carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a href="#inam" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Age : {{animal.age}}</li>
-          <li class="list-group-item">Cage Number: {{animal.cage_number}}</li>
-        </ul>
-        <!-- <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div> -->
-      </div> <!-- end card -->
-    </div> <!-- end of column -->
-  </div> <!--  end of row -->
-</div> <!-- end of Animal -->
-
-<div id="events">
-  <div class="jumbotron">
-    <h2>contact</h2>
-  </div>
-  <!-- <div class="row">
-    <div class="col-6 col-md-4">
-      <div class="card rounded-circle"  style="width: 18rem;">
-        <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
       </div>
     </div>
-  </div> -->
+  </div>
+
+
+  <!-- <div class="row">
+    <div class="col-6 col-md-4" *ngFor="let animal of this.Animals; let i = index">
+      <div class="card" >
+        <img class="card-img-top img-thumbnail" src="{{this.Animals[i].animal_image_name}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{this.Animals[i].animal_name}}</h5>
+          <p class="card-text">{{this.Animals[i].description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Age : {{i}}</li>
+          <li class="list-group-item">Cage Number: {{this.Animals[i].cage_number}}</li>
+        </ul>
+      </div> 
+    </div> 
+  </div> --> 
+</div> 
+
+<!-- events -->
+<div id="events">
+  <div class="jumbotron text-center">
+    <h3>Events</h3>
+  </div>
+  <div class="container">
+    <!-- card decks -->
+    <div class="card-deck">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail" src="../../assets/images/World-Animal-Day.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">#WordAnimalDay</h5>
+          <p class="card-text">The mission of World Animal Day is "to raise the status of animals in order to improve welfare standards around the globe</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 months ago</small>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail" src="../../assets/images/be-their-voice.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Be Their Voice (Campaign)</h5>
+          <p class="card-text">Fast forward, it is February 2020 now and we have now collected more than 98,000 signatures. We foresee the number will eventually increases and snowball before the walk event in October 2020.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 months ago</small>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail" src="../../assets/images/world-environment-day-759.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">#EnvironmentDay</h5>
+          <p class="card-text">The foods we eat, the air we breathe, the water we drink and the climate that makes our planet habitable all come from nature.This World Environment Day, it’s Time for Nature.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+      <!-- <div class="card">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div> -->
+    </div>
+
+
+  </div>
+</div>
+
+<!-- contatct -->
+<div id="contact">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <h4>click here to contact our team.</h4>
+        </button>
+      </h5>
+    </div>
+  </div>
+
+  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#contact">
+    <div class="card-body">
+      <div class="container px-lg-5">
+
+
+        <div class="card">
+          <h5 class="card-header">write your queries</h5>
+          <div class="card-body">
+            <form [formGroup]="contactForm" (ngSubmit)="onSave()">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Name</label>
+                  <input type="text" class="form-control" id="name" formControlName="name" name="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Email ID</label>
+                  <input type="email" class="form-control" id="email" formControlName="email" name="email" placeholder="abc@gmail.com" >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="3" class="form-control"  formControlName="message" name="message" placeholder="write your message here"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="SEND">
+              </div>
+            </form>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -144,47 +326,60 @@
       <div class="col-md-3 col-sm-6">
         <!--Column1-->
         <div class="footer-pad">
-          <h4>Details</h4>
+          <!-- <h4>Details</h4> -->
           <ul class="list-unstyled">
             <li><a href="#"></a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">animals</a></li>
-            <li><a href="#">contact</a></li>
-            <li><a href="#">admin</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- <div class="col-md-3 col-sm-6">
-        <div class="footer-pad">
-          <h4>Heading 2</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Website Tutorial</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Disclaimer</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Webmaster</a></li>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#animals">ANIMAL</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#events">EVENTS</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="footer-pad">
-          <h4>Heading 3</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Parks and Recreation</a></li>
-            <li><a href="#">Public Works</a></li>
-            <li><a href="#">Police Department</a></li>
-            <li><a href="#">Fire</a></li>
-            <li><a href="#">Mayor and City Council</a></li>
+          <!-- <h4>Heading 2</h4> -->
+          <ul class="list-unstyled ">
+            <li><h6>KUSHAL P</h6></li>
+            <li><a href="mailto:kussalkushal08@gmail.com">kussalkushal08@gmail.com</a></li>
+            <li><a href="tel:+919098099890">9656356396</a></li>
             <li>
-              <a href="#"></a>
-            </li>
+              <div class="col-md-3" style="padding-left: 0;">
+                <!-- <h4>Follow Us</h4> -->
+                    <ul class="social-network social-circle" style="display: flex;margin-left: 2px;">
+                     <li style="display: flex;"><a style="margin: 2px;" href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+                     <a style="margin: 2px;" href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                     <a style="margin: 2px;" href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    </ul>				
+            </div>
+             </li>
           </ul>
         </div>
-      </div> -->
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-pad">
+          <!-- <h4>Heading 3</h4> -->
+          <ul class="list-unstyled ">
+            <li><h6>AKSHAY D'SOUZA</h6></li>
+            <li><a href="mailto:kussalkushal08@gmail.com">akshay08@gmail.com</a></li>
+            <li><a href="tel:+919098099890">8656878601</a></li>
+            <li>
+              <div class="col-md-3" style="padding-left: 0;">
+                <!-- <h4>Follow Us</h4> -->
+                    <ul class="social-network social-circle" style="display: flex;margin-left: 2px;">
+                     <li style="display: flex;"><a style="margin: 2px;" href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+                     <a style="margin: 2px;" href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                     <a style="margin: 2px;" href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    </ul>				
+            </div>
+             </li>
+          </ul>
+        </div>
+      </div>
     	<div class="col-md-3">
-    		<h4>Follow Us</h4>
+        <h6 style="text-align: left;">www.zms.com</h6>
+        <p>Follow us on<p>
             <ul class="social-network social-circle">
              <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
              <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
@@ -217,20 +412,32 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
       <div class="modal-body">
-        <form>
+        <form #f = "ngForm">
           <div class="form-group">
-            <input type="text" class="form-control" name="adminName" placeholder="Admin Name">
+            <input type="text" class="form-control"  name="adminName" placeholder="Admin Name" [(ngModel)]="credentials.adminLogin">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" name="adminPassowrd" placeholder="Password">
+            <input type="password" class="form-control"  name="password" placeholder="Password" [(ngModel)]="credentials.password">
           </div>
           <div class="form-group">
-            <button type="submit" id="login_btn" class="btn btn-primary btn-lg btn-block login-btn" data-dismiss="modal" (click)="onLogin()">Login</button>
+            <button type="button" id="login_btn" class="btn btn-primary btn-lg btn-block login-btn" data-dismiss="modal" (click)="onLoginFormSubmit(f)">Login</button>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <a href="forgot??">Forgot Passowrd?</a>
+        <a href="forgot??" data-toggle="collapse" href="#collapseFooter" aria-expanded="false" aria-controls="collapseFooter"><h6>Forgot Passowrd?</h6></a>
+      </div>
+      <div class="collapse" id="collapseFooter">
+        <div class="card-body">
+          <div>
+            <form>
+              <label>Enter Email ID : </label>
+              <input type="email" class="form-control" placeholder="abc@gmail.com">
+              <br>
+              <input type="submit" name="send otp">
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>

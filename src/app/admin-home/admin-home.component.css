@@ -9,11 +9,14 @@
 .page-container {
   display: flex;
   height: 100%;
+
   background: white;
 }
 
 .page-content-container {
   padding: 20px;
+  width: 400px;
+  padding-left: 50px;
 }
 
 .sidebar {
@@ -70,4 +73,13 @@
 
 .list-item i.material-icons {
   margin-right: 12px;
+}
+
+.admin-avatar.text-center {
+  margin-bottom: 20px;
+}
+.admin-avatar img {
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }

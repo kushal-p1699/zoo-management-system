@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddAnimalsComponent } from './add-animals/add-animals.component';
 import { ViewAnimalsComponent } from './view-animals/view-animals.component';
 import { DatePipe } from '@angular/common';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { DisplayMessageComponent } from './display-message/display-message.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DatePipe } from '@angular/common';
     HomeComponent,
     AdminHomeComponent,
     AddAnimalsComponent,
-    ViewAnimalsComponent
+    ViewAnimalsComponent,
+    AdminProfileComponent,
+    DisplayMessageComponent
   ],
   imports: [
     BrowserModule,

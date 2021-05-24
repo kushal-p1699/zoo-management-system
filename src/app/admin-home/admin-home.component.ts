@@ -20,6 +20,8 @@ export class AdminHomeComponent implements OnInit {
     private _service : ZmsServiceService,
   ) { }
 
+  adminName: string;
+
   // imagesForm: FormGroup;
   // Animals: Animal[];
   // fileName: any;
@@ -34,15 +36,19 @@ export class AdminHomeComponent implements OnInit {
   // }
 
   ngOnInit() {
-    /* fetching aminal data */
-    // this._service.readAnimalData()
-    //   .subscribe((animals: Animal[]) => {
-    //     this.Animals = animals;
-    //     console.log("fetched data : ", this.Animals);
-    //   })
+    
+    this._service.readAdmindata()
+      .subscribe(data => {
+        this.adminName = data[0].name;
+    })
     
   }
 
+  onLogout() {
+    if (window.confirm("Are you sure to logout ?")) {
+      this._roter.navigate[('/admin/add-animals')]
+    }
+  }
 
   // onFileSelect(event) {
   //   const file = event.target.files[0];
